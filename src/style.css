@@ -1,0 +1,389 @@
+:root {
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: #e1e6ec;
+  background: #0c0f14;
+  font-size: 13px;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button,
+select,
+input[type="text"],
+input[type="number"] {
+  background: #1a202a;
+  border: 1px solid #323c48;
+  color: inherit;
+  border-radius: 6px;
+  padding: 9px 11px;
+}
+button {
+  cursor: pointer;
+  transition: 0.15s;
+}
+button:hover {
+  border-color: #8debd1;
+  background: #26343b;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #7cefc8;
+  outline-offset: 2px;
+}
+button.primary {
+  background: #a4f4cf;
+  color: #102a22;
+  border-color: #a4f4cf;
+  font-weight: 700;
+}
+button.active {
+  color: #a4f4cf;
+  border-color: #68bd9e;
+  background: #223b32;
+}
+button.danger.active {
+  background: #772335;
+  border-color: #ff6386;
+  color: white;
+}
+header {
+  height: 83px;
+  border-bottom: 1px solid #29313d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+.brand {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+.logo {
+  font-size: 28px;
+  color: #a4f4cf;
+}
+.brand h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 19px;
+  letter-spacing: -0.6px;
+  margin: 0;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #8697a8;
+  margin-top: 6px;
+}
+.header-actions,
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.badge {
+  font-size: 10px;
+  color: #9cf2c9;
+  border: 1px solid #345245;
+  border-radius: 20px;
+  padding: 6px 10px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: 245px minmax(400px, 1fr) 280px;
+  gap: 18px;
+  padding: 22px;
+  max-width: 1800px;
+  margin: auto;
+}
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.panel {
+  background: #131820;
+  border: 1px solid #29323d;
+  border-radius: 10px;
+  padding: 16px;
+}
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  color: #b8c7d4;
+}
+.section-title span {
+  color: #647381;
+}
+label {
+  display: block;
+  color: #8fa0b1;
+  font-size: 11px;
+  margin: 13px 0 6px;
+}
+select,
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+}
+.row > * {
+  min-width: 0;
+}
+.row button {
+  flex: 1;
+}
+input[type="range"] {
+  width: 100%;
+  accent-color: #9cf2c9;
+}
+input[type="color"] {
+  width: 42px;
+  height: 32px;
+  padding: 2px;
+  background: transparent;
+  border: 1px solid #3e4955;
+  border-radius: 4px;
+}
+.small {
+  font-size: 11px;
+  color: #8796a7;
+  line-height: 1.7;
+}
+.surface {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  margin-bottom: 6px;
+  padding: 12px;
+}
+.surface.selected {
+  border-color: #8de5c2;
+  background: #21322f;
+}
+.dot {
+  color: #8de5c2;
+}
+.stage-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 13px;
+}
+.stage-head h2 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+}
+.stage {
+  position: relative;
+  background: #000;
+  aspect-ratio: 16/9;
+  border: 1px solid #3b4654;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.stage canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.stage svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+.stage circle {
+  cursor: grab;
+  fill: #142a24;
+  stroke: #a4f4cf;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+.stage polygon {
+  fill: none;
+  stroke: #a4f4cf;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+.stage text {
+  fill: white;
+  font-size: 13px;
+  paint-order: stroke;
+  stroke: #000;
+  stroke-width: 3px;
+}
+.stage-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #8192a4;
+  padding: 13px 0;
+}
+.stage-footer b {
+  color: #b9c8d6;
+  font-weight: 500;
+}
+.help {
+  padding: 14px 16px;
+  background: #15231f;
+  border: 1px solid #2c4439;
+  border-radius: 8px;
+  color: #a9c0b4;
+  line-height: 1.8;
+  font-size: 12px;
+}
+.effects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.effects button {
+  padding: 16px 5px 12px;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+}
+.effect-icon {
+  display: block;
+  font-size: 25px;
+  color: #9eb3ca;
+  margin-bottom: 10px;
+}
+.effects .active .effect-icon {
+  color: #a4f4cf;
+}
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.demo {
+  width: 100%;
+  height: 220px;
+  display: block;
+  border-radius: 7px;
+}
+.camera {
+  width: 100%;
+  background: #080a0f;
+  border: 1px solid #34404e;
+  border-radius: 6px;
+  touch-action: none;
+  cursor: crosshair;
+}
+.camera-video {
+  display: none;
+}
+#status {
+  min-height: 26px;
+  color: #b6dec8;
+  font-size: 12px;
+  padding: 0 24px 16px;
+  white-space: pre-wrap;
+}
+#quality {
+  color: #9eecc8;
+}
+.full {
+  width: 100%;
+}
+.spacer {
+  margin-top: 10px;
+}
+.output {
+  background: #000;
+  overflow: hidden;
+  cursor: none;
+}
+.output #app,
+.output canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+.output #unlock {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+}
+.output #unlock.hidden {
+  display: none;
+}
+.muted {
+  color: #637789;
+}
+.number {
+  font-family: monospace;
+}
+.toolbar {
+  display: flex;
+  gap: 6px;
+}
+.toolbar button {
+  padding: 6px 10px;
+}
+.hidden {
+  display: none !important;
+}
+@media (max-width: 1150px) {
+  .workspace {
+    grid-template-columns: 210px minmax(360px, 1fr);
+  }
+  .right {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  header {
+    padding: 0 18px;
+  }
+}
+@media (max-width: 720px) {
+  .workspace {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+  }
+  .right {
+    display: flex;
+  }
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-actions .badge {
+    display: none;
+  }
+  .brand h1 {
+    font-size: 14px;
+  }
+  .effects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  header {
+    padding: 12px;
+    height: auto;
+  }
+  .stage {
+    min-height: 220px;
+  }
+}
